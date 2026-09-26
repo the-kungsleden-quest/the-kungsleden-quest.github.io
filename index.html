@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d1420">
+  <title>The Kungsleden Quest</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">the kungsleden quest</span></a>
+      <span class="header-note">[ un nuovo viaggio / tra la terra e il cielo? ]</span>
+    </header>
+
+    <main>
+      <div class="game-grid">
+        <section class="map-panel" aria-labelledby="stage-title">
+          <div class="trail-heading"><h1 id="stage-title">the kungsleden map<span aria-hidden="true">_</span></h1></div>
+          <div class="route-map">
+            <svg class="map-terrain" viewBox="0 0 560 810" role="img" aria-label="Schematic mountain map with the Kungsleden route running from north to south">
+              <defs>
+                <linearGradient id="map-ground" x2="0" y2="1"><stop stop-color="#172b38"/><stop offset="1" stop-color="#101d2a"/></linearGradient>
+                <pattern id="map-grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#8baebd" stroke-opacity=".055"/></pattern>
+                <clipPath id="route-clip"><rect id="route-reveal-rect" x="0" y="0" width="560" height="0"/></clipPath>
+              </defs>
+              <rect width="560" height="810" fill="url(#map-ground)"/>
+              <rect width="560" height="810" fill="url(#map-grid)"/>
+              <path d="M0 0H205Q201 69 160 100T164 218Q130 285 74 328L0 350Z M560 16Q501 49 491 126T560 245Z M560 508Q489 504 460 570T560 733Z M63 603Q102 585 132 625T165 710Q91 727 0 681Z" fill="#235268" opacity=".43"/>
+              <path d="M0 33Q105 0 166 62T153 167Q103 228 51 257M0 96Q78 73 107 138T62 281M560 288Q467 273 407 339T315 449M560 339Q479 344 436 395T352 484M32 731Q114 689 130 618T222 492M0 779Q127 743 162 678T235 539" fill="none" stroke="#5b8490" stroke-width="2" opacity=".23"/>
+              <path d="M82 358Q150 314 207 314T264 271M350 748Q426 678 454 628T547 593M51 499Q103 449 151 475T237 438" fill="none" stroke="#a0bcc4" stroke-width="1" stroke-dasharray="2 8" opacity=".32"/>
+              <polyline class="route-shadow" points="387,60 294,173 265,267 278,314 243,388 230,445 354,532 338,607 304,651 205,704 147,750"/>
+              <polyline class="route-base" points="387,60 294,173 265,267 278,314 243,388 230,445 354,532 338,607 304,651 205,704 147,750"/>
+              <polyline id="route-completed" class="route-completed" clip-path="url(#route-clip)" points="387,60 294,173 265,267 278,314 243,388 230,445 354,532 338,607 304,651 205,704 147,750"/>
+            </svg>
+            <nav id="stage-nav" class="route-stops" aria-label="Choose a stop on the Kungsleden route"></nav>
+          </div>
+        </section>
+
+        <section class="stage-panel" aria-labelledby="challenge-title">
+          <div class="stage-detail">
+            <span id="stage-label" class="stage-label">TAPPA 01 / 10</span>
+            <h2 id="challenge-title">Opening the first stage…</h2>
+            <p id="challenge-description" class="description"></p>
+            <a id="input-link" class="download" href="#" download="tappa-input.txt">[ download input.txt <span aria-hidden="true">↓</span> ]</a>
+            <form id="answer-form" autocomplete="off">
+              <label for="answer">la tua risposta:</label>
+              <div class="answer-row"><span class="prompt" aria-hidden="true">&gt;</span><input id="answer" type="text" required spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="type your answer"><button id="submit-button" type="submit">submit</button></div>
+            </form>
+            <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer><span>the kungsleden quest</span><span>una creazione di D, settembre 2026</span></footer>
+  </div>
+</body>
+</html>
